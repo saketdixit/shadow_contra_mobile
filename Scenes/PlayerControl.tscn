@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://rovo3rca7300"]
+
+[ext_resource type="PackedScene" uid="uid://cr3cf1qhvvwwb" path="res://Scenes/ButtonComponent.tscn" id="1_hsew3"]
+[ext_resource type="Script" path="res://Scripts/BasicAttackButton.gd" id="2_22c2j"]
+[ext_resource type="PackedScene" uid="uid://ce7xfvj0m41yl" path="res://Scenes/MovementStick.tscn" id="2_q2cns"]
+[ext_resource type="Texture2D" uid="uid://cet1c3hkpowwy" path="res://Assets/Sprites/game-icons_standing-potion.png" id="3_pknse"]
+[ext_resource type="Texture2D" uid="uid://b0iny1sur3bt6" path="res://Assets/Sprites/default_running.png" id="4_7ycts"]
+[ext_resource type="Texture2D" uid="uid://cd5f45jymo1h2" path="res://Assets/Sprites/mdi_knife-military.png" id="5_n6he5"]
+[ext_resource type="Texture2D" uid="uid://cca46lx6yd4ms" path="res://Assets/Sprites/game-icons_wind-hole.png" id="6_aqooe"]
+
+[node name="PlayerControl" type="Node2D"]
+
+[node name="BasicAttackButton" parent="." instance=ExtResource("1_hsew3")]
+position = Vector2(712, 328)
+script = ExtResource("2_22c2j")
+
+[node name="HealingPotionButton" parent="." instance=ExtResource("1_hsew3")]
+position = Vector2(568, 352)
+scale = Vector2(1.2, 1.2)
+embedded_icon = ExtResource("3_pknse")
+
+[node name="PowerPotionButton" parent="." instance=ExtResource("1_hsew3")]
+position = Vector2(797, 185)
+scale = Vector2(1.2, 1.2)
+embedded_icon = ExtResource("4_7ycts")
+
+[node name="MeleeAttackButton" parent="." instance=ExtResource("1_hsew3")]
+position = Vector2(658, 222)
+scale = Vector2(1.2, 1.2)
+embedded_icon = ExtResource("5_n6he5")
+
+[node name="UltimateAttackButton" parent="." instance=ExtResource("1_hsew3")]
+position = Vector2(932, 229)
+scale = Vector2(1.2, 1.2)
+embedded_icon = ExtResource("6_aqooe")
+
+[node name="MovementStick" parent="." instance=ExtResource("2_q2cns")]
+scale = Vector2(0.1, 0.1)
