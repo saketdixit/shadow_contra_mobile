@@ -41,7 +41,7 @@ scale = Vector2(1.2, 1)
 shape = SubResource("RectangleShape2D_8h3ih")
 
 [node name="PlayerControl" parent="." instance=ExtResource("2_yuf3v")]
-position = Vector2(140, 243)
+position = Vector2(168, 272)
 scale = Vector2(0.5, 0.5)
 
 [node name="Panel" type="Panel" parent="."]
@@ -52,3 +52,4 @@ offset_bottom = 646.0
 scale = Vector2(19.96, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_ifw45")]
+position = Vector2(143, 128)

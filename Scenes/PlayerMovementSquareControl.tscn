@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqlfm8kgwmtyw"]
+
+[ext_resource type="PackedScene" uid="uid://dtyygkt5es23g" path="res://Scenes/SquareButtonComponent.tscn" id="1_onl1j"]
+[ext_resource type="Script" path="res://Scripts/PlayerMovementSquareControl.gd" id="1_p74sb"]
+[ext_resource type="Texture2D" uid="uid://dl565mw8mwgnw" path="res://Assets/Sprites/Up-Down.png" id="2_svkb4"]
+
+[node name="PlayerMovementControl" type="Node2D"]
+script = ExtResource("1_p74sb")
+
+[node name="JumpButton" parent="." instance=ExtResource("1_onl1j")]
+position = Vector2(120, 180)
+
+[node name="RightMoveButton" parent="." instance=ExtResource("1_onl1j")]
+position = Vector2(200, 260)
+
+[node name="CrouchDownButton" parent="." instance=ExtResource("1_onl1j")]
+position = Vector2(120, 340)
+
+[node name="LeftMoveButton" parent="." instance=ExtResource("1_onl1j")]
+position = Vector2(40, 260)
+embedded_icon = ExtResource("2_svkb4")

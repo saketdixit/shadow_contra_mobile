@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtyygkt5es23g"]
+
+[ext_resource type="Texture2D" uid="uid://cjk6cybte6oan" path="res://Assets/Sprites/Active AB - □.png" id="1_xd4vw"]
+[ext_resource type="Texture2D" uid="uid://coeij0vavyycn" path="res://Assets/Sprites/Pressed AB - □.png" id="2_c7sjj"]
+[ext_resource type="Script" path="res://Scripts/SquareButtonComponent.gd" id="3_rr36s"]
+[ext_resource type="Texture2D" uid="uid://dl565mw8mwgnw" path="res://Assets/Sprites/Up-Down.png" id="4_jfewl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahv30"]
+size = Vector2(80, 80)
+
+[node name="SquareButton" type="TouchScreenButton"]
+texture_normal = ExtResource("1_xd4vw")
+texture_pressed = ExtResource("2_c7sjj")
+shape = SubResource("RectangleShape2D_ahv30")
+script = ExtResource("3_rr36s")
+
+[node name="ButtonIcon" type="Sprite2D" parent="."]
+position = Vector2(44, 44)
+texture = ExtResource("4_jfewl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="released" from="." to="." method="_on_released"]

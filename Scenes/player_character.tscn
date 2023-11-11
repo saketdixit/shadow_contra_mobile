@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://domdfufxndxqu"]
 
+[ext_resource type="Script" path="res://Scripts/player_character.gd" id="1_adp38"]
 [ext_resource type="Texture2D" uid="uid://bg6tm8prflc0i" path="res://Assets/Sprites/playerGrey_walk1.png" id="1_kw0c8"]
-[ext_resource type="Script" path="res://Scenes/player_character.gd" id="1_m8wto"]
 [ext_resource type="Texture2D" uid="uid://b0rtejjf1rs1u" path="res://Assets/Sprites/playerGrey_walk2.png" id="2_mx7us"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lxty4"]
@@ -22,7 +22,7 @@ animations = [{
 height = 136.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_m8wto")
+script = ExtResource("1_adp38")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lxty4")

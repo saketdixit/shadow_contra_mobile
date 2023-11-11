@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr3cf1qhvvwwb"]
+
+[ext_resource type="Texture2D" uid="uid://c0ep15qv1mptj" path="res://Assets/Sprites/Active AB - O.png" id="1_c4knn"]
+[ext_resource type="Texture2D" uid="uid://bhnrp2plv2dcp" path="res://Assets/Sprites/Pressed AB - O.png" id="2_bnio7"]
+[ext_resource type="Script" path="res://Scripts/ButtonComponent.gd" id="3_md4vg"]
+[ext_resource type="Texture2D" uid="uid://bacgixsvsudrn" path="res://Assets/Sprites/default_icon.png" id="4_7r634"]
+[ext_resource type="Texture2D" uid="uid://c5m4t1mydqq8y" path="res://Assets/Sprites/file-icons_shuriken.png" id="5_hejcg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4b2q"]
+radius = 50.0
+
+[node name="CircleButtonComponent" type="TouchScreenButton"]
+position = Vector2(140, 40)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_c4knn")
+texture_pressed = ExtResource("2_bnio7")
+shape = SubResource("CircleShape2D_v4b2q")
+visibility_mode = 1
+script = ExtResource("3_md4vg")
+embedded_icon = ExtResource("4_7r634")
+
+[node name="ButtonIcon" type="Sprite2D" parent="."]
+position = Vector2(50, 50)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_hejcg")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="released" from="." to="." method="_on_released"]
