@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
 @onready var player_controls = $"../PlayerControl"
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var SPEED = 300.0
+@export var JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var screen_size
+var input_vector: Vector2
+var direction: int = 0 #unused
 
+func _ready():
+	screen_size = get_viewport_rect().size
 
 func _physics_process(delta):
 	#get the joystick
@@ -16,9 +21,15 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	# Handle Jump. 
+	if input_vector.y == -1  and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	#If using square controls
+	if input_vector.x:
+		velocity.x = input_vector.x * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -37,12 +48,8 @@ func _physics_process(delta):
 	else:
 		velocity=Vector2(0,0)'''
 	
-	#If using square controls
-	var direction = Input.get_axis("ui_left", "ui_right")
-	var movement_square_buttons = player_controls.get_child(6)
-	
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
+
+func _on_player_ui_movement_button_action(side):
+	input_vector.x = side.x
+	input_vector.y = side.y

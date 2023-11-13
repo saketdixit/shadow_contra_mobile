@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1rfhmuw7g53o"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerUI.gd" id="1_fsmnr"]
+[ext_resource type="PackedScene" uid="uid://rovo3rca7300" path="res://Scenes/PlayerControl.tscn" id="2_dnhpd"]
+[ext_resource type="PackedScene" uid="uid://domdfufxndxqu" path="res://Scenes/player_character.tscn" id="3_7rnk0"]
+
+[node name="PlayerUI" type="Node2D"]
+script = ExtResource("1_fsmnr")
+
+[node name="PlayerControl" parent="." instance=ExtResource("2_dnhpd")]
+
+[node name="Player" parent="." instance=ExtResource("3_7rnk0")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[connection signal="movement_button_action" from="." to="Player" method="_on_player_ui_movement_button_action"]
