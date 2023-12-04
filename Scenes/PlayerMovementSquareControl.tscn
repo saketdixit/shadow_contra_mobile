@@ -8,14 +8,13 @@
 script = ExtResource("1_p74sb")
 
 [node name="JumpButton" parent="." instance=ExtResource("1_onl1j")]
-position = Vector2(120, 180)
 
 [node name="RightMoveButton" parent="." instance=ExtResource("1_onl1j")]
-position = Vector2(200, 260)
+position = Vector2(80, 80)
 
 [node name="CrouchDownButton" parent="." instance=ExtResource("1_onl1j")]
-position = Vector2(120, 340)
+position = Vector2(0, 160)
 
 [node name="LeftMoveButton" parent="." instance=ExtResource("1_onl1j")]
-position = Vector2(40, 260)
+position = Vector2(-80, 80)
 embedded_icon = ExtResource("2_svkb4")

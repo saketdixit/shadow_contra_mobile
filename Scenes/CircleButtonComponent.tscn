@@ -10,8 +10,6 @@
 radius = 50.0
 
 [node name="CircleButtonComponent" type="TouchScreenButton"]
-position = Vector2(140, 40)
-scale = Vector2(3, 3)
 texture_normal = ExtResource("1_c4knn")
 texture_pressed = ExtResource("2_bnio7")
 shape = SubResource("CircleShape2D_v4b2q")

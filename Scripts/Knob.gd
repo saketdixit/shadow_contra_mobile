@@ -4,7 +4,7 @@ extends Sprite2D
 
 var pressing = false
 
-@export var maxLength = 600
+@export var maxLength = 1200
 var deadzone = 15
 
 func _ready():

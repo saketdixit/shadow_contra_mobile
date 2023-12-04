@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=3 format=3 uid="uid://sfwsqj4hdn6l"]
+
+[ext_resource type="Script" path="res://Scripts/ResourceDefs/weapon.gd" id="1_2r8vn"]
+[ext_resource type="Texture2D" uid="uid://c5m4t1mydqq8y" path="res://Assets/Sprites/file-icons_shuriken.png" id="2_0ela3"]
+
+[resource]
+script = ExtResource("1_2r8vn")
+resource_id = 100
+user = 0
+projectile = ExtResource("2_0ela3")
+damage = 10
+fire_rate = 2
+projectile_speed = 4
+weapon_icon = ExtResource("2_0ela3")
+description = "Basic Ninja Equipment."
+enemies_killed = 0

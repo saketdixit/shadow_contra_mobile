@@ -1,16 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1rfhmuw7g53o"]
+[gd_scene load_steps=7 format=3 uid="uid://c1rfhmuw7g53o"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerUI.gd" id="1_fsmnr"]
 [ext_resource type="PackedScene" uid="uid://rovo3rca7300" path="res://Scenes/PlayerControl.tscn" id="2_dnhpd"]
 [ext_resource type="PackedScene" uid="uid://domdfufxndxqu" path="res://Scenes/player_character.tscn" id="3_7rnk0"]
+[ext_resource type="Script" path="res://Scripts/HealthDisplay.gd" id="4_pmdtr"]
+[ext_resource type="Texture2D" uid="uid://78klhvqgg5h3" path="res://Assets/Sprites/mdi_heart.png" id="5_af8f7"]
+[ext_resource type="Texture2D" uid="uid://bn25yay4bnm0v" path="res://Assets/Sprites/mdi_heart-outline.png" id="6_5lidk"]
 
 [node name="PlayerUI" type="Node2D"]
 script = ExtResource("1_fsmnr")
 
-[node name="PlayerControl" parent="." instance=ExtResource("2_dnhpd")]
-
 [node name="Player" parent="." instance=ExtResource("3_7rnk0")]
+position = Vector2(573, 327)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="ScreenUI" type="CanvasLayer" parent="."]
+
+[node name="PlayerControl" parent="ScreenUI" instance=ExtResource("2_dnhpd")]
+
+[node name="HealthDisplay" type="CenterContainer" parent="ScreenUI"]
+offset_left = 515.0
+offset_top = 83.0
+offset_right = 666.0
+offset_bottom = 110.0
+script = ExtResource("4_pmdtr")
+
+[node name="GridContainer" type="GridContainer" parent="ScreenUI/HealthDisplay"]
+layout_mode = 2
+columns = 5
+
+[node name="TextureRect" type="TextureRect" parent="ScreenUI/HealthDisplay/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_af8f7")
+
+[node name="TextureRect2" type="TextureRect" parent="ScreenUI/HealthDisplay/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_af8f7")
+
+[node name="TextureRect3" type="TextureRect" parent="ScreenUI/HealthDisplay/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_af8f7")
+
+[node name="TextureRect4" type="TextureRect" parent="ScreenUI/HealthDisplay/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_af8f7")
+
+[node name="TextureRect5" type="TextureRect" parent="ScreenUI/HealthDisplay/GridContainer"]
+layout_mode = 2
+texture = ExtResource("6_5lidk")
+
+[connection signal="attack_button_action" from="." to="Player" method="_on_player_ui_attack_button_action"]
 [connection signal="movement_button_action" from="." to="Player" method="_on_player_ui_movement_button_action"]

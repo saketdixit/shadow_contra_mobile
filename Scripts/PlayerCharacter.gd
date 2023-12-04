@@ -1,19 +1,25 @@
 extends CharacterBody2D
+#@onready var godot_essentials_platformer_movement_component: GodotEssentialsPlatformerMovementComponent = $GodotEssentialsPlatformerMovementComponent
 
-@onready var player_controls = $"../PlayerControl"
+@onready var player_ui = $".."
+
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
+@export var CURRENT_HEALTH = 5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var aim_tracker = $AimTracker
+
 var screen_size
 var input_vector: Vector2
-var direction: int = 0 #unused
+var aim_direction: Vector2
+
 
 func _ready():
 	screen_size = get_viewport_rect().size
 
-func _physics_process(delta):
+func _process(delta):
 	#get the joystick
 	
 	
@@ -39,8 +45,10 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	'''
+	
 	#If using joystick
-	'''var joystick = player_controls.get_child(5)
+	'''
+	var joystick = player_controls.get_child(5)
 	var direction = joystick.posVector
 	
 	if direction:
@@ -48,8 +56,23 @@ func _physics_process(delta):
 	else:
 		velocity=Vector2(0,0)'''
 	
+	#rotate the aim tracker to the right position
+	
+	aim_direction = player_ui.aim_vector
+	if(aim_direction):
+		var aim_angle = atan2(aim_direction.x, -aim_direction.y)
+		aim_tracker.set_rotation(aim_angle)
+	
+	#print(aim_tracker.rotation_degrees)
+	
 	move_and_slide()
 
 func _on_player_ui_movement_button_action(side):
 	input_vector.x = side.x
 	input_vector.y = side.y
+
+func player_take_damage(damage):
+	CURRENT_HEALTH -= damage
+
+#func _on_player_ui_attack_button_action(side):
+#	direction = side

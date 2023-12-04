@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://domdfufxndxqu"]
+[gd_scene load_steps=7 format=3 uid="uid://domdfufxndxqu"]
 
-[ext_resource type="Script" path="res://Scripts/player_character.gd" id="1_adp38"]
+[ext_resource type="Script" path="res://Scripts/PlayerCharacter.gd" id="1_ihnet"]
 [ext_resource type="Texture2D" uid="uid://bg6tm8prflc0i" path="res://Assets/Sprites/playerGrey_walk1.png" id="1_kw0c8"]
 [ext_resource type="Texture2D" uid="uid://b0rtejjf1rs1u" path="res://Assets/Sprites/playerGrey_walk2.png" id="2_mx7us"]
+[ext_resource type="Texture2D" uid="uid://c4wi2dxvb0tdh" path="res://Assets/Sprites/Aim.png" id="4_n21tx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lxty4"]
 animations = [{
@@ -22,7 +23,7 @@ animations = [{
 height = 136.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_adp38")
+script = ExtResource("1_ihnet")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lxty4")
@@ -31,3 +32,11 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(5.4, 1)
 shape = SubResource("CapsuleShape2D_iigp3")
+
+[node name="AimTracker" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="AimSprite" type="Sprite2D" parent="AimTracker"]
+position = Vector2(0, -90)
+rotation = -1.5708
+texture = ExtResource("4_n21tx")

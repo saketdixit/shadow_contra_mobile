@@ -1,37 +1,53 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnna0r2v1ujuc"]
+[gd_scene load_steps=5 format=3 uid="uid://bnna0r2v1ujuc"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_mx4ii"]
+[ext_resource type="Texture2D" uid="uid://cqew1er0hsra0" path="res://Assets/Sprites/image 3.png" id="2_wvhyh"]
+[ext_resource type="Texture2D" uid="uid://cainpukk7j2j4" path="res://Assets/Sprites/mingcute_menu-fill.png" id="3_muix6"]
+[ext_resource type="Texture2D" uid="uid://niffhbuisy7c" path="res://Assets/Sprites/image 2.png" id="4_ma4cn"]
 
 [node name="HomePageScene" type="Node2D"]
 position = Vector2(6, 5)
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_mx4ii")
 
+[node name="MenuBackground" type="Sprite2D" parent="."]
+position = Vector2(634, 355)
+texture = ExtResource("2_wvhyh")
+
 [node name="GameNameLabel" type="RichTextLabel" parent="."]
-offset_left = 385.0
-offset_top = 75.0
-offset_right = 775.0
-offset_bottom = 153.0
+offset_left = 445.556
+offset_top = 31.1111
+offset_right = 835.556
+offset_bottom = 109.111
 scale = Vector2(1.00828, 1.00873)
 theme_override_font_sizes/normal_font_size = 50
 text = "Contra Shadow"
 
+[node name="SettingsButton" type="TouchScreenButton" parent="."]
+position = Vector2(1200, 10)
+texture_normal = ExtResource("3_muix6")
+
 [node name="StartButton" type="Button" parent="."]
-offset_left = 420.0
-offset_top = 190.0
-offset_right = 576.0
-offset_bottom = 267.0
+offset_left = 107.778
+offset_top = 74.4445
+offset_right = 263.778
+offset_bottom = 151.444
 scale = Vector2(1.71889, 1.83876)
 theme_override_font_sizes/font_size = 50
 text = "START"
 metadata/_edit_use_anchors_ = true
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 420.0
-offset_top = 417.0
-offset_right = 547.0
-offset_bottom = 494.0
+offset_left = 916.667
+offset_top = 66.6667
+offset_right = 1043.67
+offset_bottom = 143.667
 scale = Vector2(2.16, 2)
 theme_override_font_sizes/font_size = 50
 text = "QUIT"
+
+[node name="CharacterSelection" type="Sprite2D" parent="."]
+position = Vector2(622.222, 412.222)
+texture = ExtResource("4_ma4cn")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

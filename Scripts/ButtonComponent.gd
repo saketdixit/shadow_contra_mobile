@@ -1,7 +1,6 @@
 extends TouchScreenButton
 
 
-@onready var this_button = $'.'
 @onready var button_icon = get_child(0) 
 @export var embedded_icon = load("res://Assets/Sprites/default_icon.png")
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +17,7 @@ func _process(_delta):
 
 
 func _on_pressed():
-	print("Button Pressed!")
+	print("Attack Button Pressed!")
 
 
 func _on_released():

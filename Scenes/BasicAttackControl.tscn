@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqjj8bmr386oi"]
+
+[ext_resource type="Script" path="res://Scenes/BasicAttackControl.gd" id="1_8qfx4"]
+[ext_resource type="PackedScene" uid="uid://cr3cf1qhvvwwb" path="res://Scenes/CircleButtonComponent.tscn" id="1_dy8f8"]
+[ext_resource type="Texture2D" uid="uid://c5m4t1mydqq8y" path="res://Assets/Sprites/file-icons_shuriken.png" id="2_cj8do"]
+[ext_resource type="PackedScene" uid="uid://ce7xfvj0m41yl" path="res://Scenes/MovementStick.tscn" id="2_ukst0"]
+
+[node name="BasicAttackStickButton" type="Node2D"]
+script = ExtResource("1_8qfx4")
+
+[node name="CircleButtonComponent" parent="." instance=ExtResource("1_dy8f8")]
+embedded_icon = ExtResource("2_cj8do")
+
+[node name="DirectionStick" parent="CircleButtonComponent" instance=ExtResource("2_ukst0")]
+modulate = Color(1, 1, 1, 0.180392)
+position = Vector2(49, 49)
