@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Player_Character_Resource" load_steps=4 format=3 uid="uid://c6hnreuf8h5vx"]
+
+[ext_resource type="Script" path="res://Scripts/ResourceDefs/player_character.gd" id="1_qhhf3"]
+[ext_resource type="Texture2D" uid="uid://bg6tm8prflc0i" path="res://Assets/Sprites/playerGrey_walk1.png" id="1_xnyit"]
+[ext_resource type="Resource" uid="uid://sfwsqj4hdn6l" path="res://Resources/shuriken.tres" id="2_ansqp"]
+
+[resource]
+script = ExtResource("1_qhhf3")
+resource_id = 100
+character_name = "Placeholder"
+game_model = ExtResource("1_xnyit")
+description = "Base character used for testing"
+total_health = 5
+weapon = ExtResource("2_ansqp")
+enemies_killed = 0

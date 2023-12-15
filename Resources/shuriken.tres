@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_2r8vn")
-resource_id = 100
+resource_id = 201
 user = 0
 projectile = ExtResource("2_0ela3")
 damage = 10

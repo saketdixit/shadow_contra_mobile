@@ -1,11 +1,13 @@
 extends CharacterBody2D
 #@onready var godot_essentials_platformer_movement_component: GodotEssentialsPlatformerMovementComponent = $GodotEssentialsPlatformerMovementComponent
 
+
 @onready var player_ui = $".."
 
-@export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
-@export var CURRENT_HEALTH = 5
+@export var player_character: Resource
+@export var SPEED: float = 300.0
+@export var JUMP_VELOCITY: float = -400.0
+@export var CURRENT_HEALTH: int = 5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -21,7 +23,6 @@ func _ready():
 
 func _process(delta):
 	#get the joystick
-	
 	
 	# Add the gravity.
 	if not is_on_floor():

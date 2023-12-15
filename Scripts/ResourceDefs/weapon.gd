@@ -14,3 +14,6 @@ class_name Weapon_Resource
 
 #this section is for achievements
 @export var enemies_killed: int
+
+func _init():
+	pass
